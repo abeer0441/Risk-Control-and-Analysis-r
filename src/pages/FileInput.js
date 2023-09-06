@@ -32,7 +32,7 @@ function FileInput() {
     formData.append('file', selectedFile);
 
     try {
-      const response = await fetch('https://risk-control-and-analysis-0974368b9653.herokuapp.com//analyze', {
+      const response = await fetch('https://risk-control-and-analysis-0974368b9653.herokuapp.com/analyze', {
         method: 'POST',
         body: formData,
         headers:{

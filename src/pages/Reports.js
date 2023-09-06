@@ -13,7 +13,7 @@ function Reports() {
     document.querySelector('html').setAttribute("id", "Reports");
    
     const sendDataToStreamlit = (data) => {
-        fetch("https://riskanalysis-f9a284bc46f5.herokuapp.com//streamlit", {
+        fetch("https://riskanalysis-f9a284bc46f5.herokuapp.com/streamlit", {
           method: "POST",
           body: JSON.stringify(data),
           headers: {
