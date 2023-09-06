@@ -5,8 +5,6 @@ function Home() {
   return (
     <div className="Home">
       
-      <header> </header>
-
       <div>
           <h1> Risk Control and Analysis </h1>  
       </div>
@@ -15,7 +13,6 @@ function Home() {
           <nav> <Link to="/file" className="nav-item">Reports</Link> </nav>
       </div>
 
-      <footer> </footer>
     </div>
   );
 }

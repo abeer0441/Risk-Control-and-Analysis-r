@@ -32,7 +32,7 @@ function FileInput() {
     formData.append('file', selectedFile);
 
     try {
-      const response = await fetch('http://127.0.0.1:5000/analyze', {
+      const response = await fetch('https://risk-control-and-analysis-0974368b9653.herokuapp.com//analyze', {
         method: 'POST',
         body: formData,
         headers:{
@@ -55,8 +55,6 @@ function FileInput() {
   return (
     <div className="FileInput">
       
-      <header> </header>
-
         <main>
             <h1> Risk Control and Analysis </h1>
         </main>
