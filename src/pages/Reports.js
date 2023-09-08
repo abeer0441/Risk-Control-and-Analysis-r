@@ -13,7 +13,7 @@ function Reports() {
     document.querySelector('html').setAttribute("id", "Reports");
    
     const sendDataToStreamlit = (data) => {
-        fetch("https://riskanalysis-f9a284bc46f5.herokuapp.com/streamlit", {
+        fetch("https://risk-control-and-analysis-0974368b9653.herokuapp.com/streamlit", {
           method: "POST",
           body: JSON.stringify(data),
           headers: {
@@ -39,7 +39,7 @@ function Reports() {
               <img src={img1} className='logo'/>
           </header>
 
-          <iframe src="http://localhost:8501/" frameborder="0" 
+          <iframe src="https://riskanalysis-f9a284bc46f5.herokuapp.com/" frameborder="0" 
           marginheight="0" 
           marginwidth="0" 
           width="100%" 
