@@ -1,7 +1,6 @@
 import {useNavigate} from 'react-router-dom'
 import React, { useState } from 'react';
 
-
 function FileInput() {
   const buttonStyle = {background: 'none',
     color: 'inherit',
@@ -24,32 +23,29 @@ function FileInput() {
       setSelectedFile(event.target.files[0]);
     }
   };
-  
   const handleSubmit = async (event) => {
     event.preventDefault();
 
     const formData = new FormData();
     formData.append('file', selectedFile);
 
-    try {
-      const response = await fetch('https://risk-control-and-analysis-0974368b9653.herokuapp.com//analyze', {
-        method: 'POST',
-        body: formData,
-        headers:{
-          accept: 'application/json',
-          "Access-Control-Allow-Origin": "*"
-        }
-      });
-      // Handle the response from the Streamlit app here
-      var data = await response.json()
-      if (data.length !== 0){
-        navigate("/reports",{state:data});
+    console.log(formData);
+
+    const response = await fetch('https://risk-control-and-analysis-0974368b9653.herokuapp.com//analyze', {
+      method: 'POST',
+      body: formData,
+      headers:{
+        accept: 'application/json',
+        "Access-Control-Allow-Origin": "*"
       }
-    } catch (error) {
-      // TypeError: Failed to fetch
-      console.log('There was an error', error);
-    }
+    });
     
+    // Handle the response from the Streamlit app here
+    var data = await response.json()    
+    console.log(data)  
+    if (data.length !== 0){
+        navigate("/reports",{state:data});
+      }      
   };
   
   return (
